@@ -1,0 +1,34 @@
+mixin projectBody(project= {})
+  //- pre= dump(project)
+  .detailed
+    .detailed__hero
+      img.detailed__image(src=`/img/${project.photo || 'project.png'}`)
+      h2.title.title--detailed
+        a(href=`/projects/${project.slug}`) #{project.name}
+
+  .detailed__details.inner
+    //- p
+    //-   if project.weblink 
+    //-     a(href=`${project.weblink}`) 
+    //-       != globals.icon('play')
+    //- p
+    //-   if project.github 
+    //-     a(href=`${project.github}`)
+    //-       != globals.icon('github')
+    //- p
+    //-   if project.blog 
+    //-     a(href=`${project.blog}`)
+    //-       != globals.icon('blog')
+    //- pre= dump(project)
+    //- p= project.description
+    p= project.project_goal
+    p= project.project_solution
+    p= project.more_details
+
+    if project.tags
+      ul.tags
+        each tag in project.tags
+          li.tag
+            //- a.tag__link(href=`/tags/${tag}`)
+            span.tag__text ##{tag}
+

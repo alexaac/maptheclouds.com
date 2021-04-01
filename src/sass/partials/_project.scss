@@ -1,0 +1,121 @@
+.projects {
+  padding-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: -1.25em 0 0 -1.25em;
+}
+
+.project {
+  background: white;
+  margin: 1.25em 0 0 1.25em;
+  width: calc(33.3333% - 1.25em);
+  box-shadow: shad;
+
+  transition: transform 0.5s;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2),
+      0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    content: "";
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    transform: scale3d(1.006, 1.006, 1);
+
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  &--wide {
+    width: 100%;
+  }
+  &__details {
+    padding: 1rem;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+
+    p {
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+  }
+  @media all and (max-width: 850px) {
+    width: calc(50% - 1.25em);
+  }
+  @media all and (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.project__actions {
+  position: relative;
+  // z-index: 2;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 200px;
+}
+
+.project__action {
+  font-size: 10px;
+  opacity: 0.6;
+  svg {
+    width: 25px;
+    height: 25px;
+    fill: #8aa9e4;
+  }
+  &--edit {
+    a {
+      border-bottom: 0;
+    }
+  }
+}
+
+.project__hero {
+  position: relative;
+  padding: 0 10px 0 10px;
+  text-align: right;
+  &:before {
+    display: block;
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  img {
+    height: 98%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,32 @@
+mixin projectCard(project= {})
+  .project
+    .project__hero
+      .project__actions
+      if project.weblink
+        a(href=`${project.weblink}` target="_blank")
+          img(src=`/img/${project.photo || 'project.png'}` title=`${project.name}`)
+      else if (project.slug === "30-day-chart-challenge")
+        a(href=`/playground/${project.slug}/`)
+          img(src=`/img/${project.photo || 'project.png'}` title=`${project.name}`)
+      else 
+        a(href="#")
+          img(src=`/img/${project.photo || 'project.png'}` title=`${project.name}`)
+    .project__details
+      if project.video_link 
+        .project__action.project__action--link
+          a(href=`${project.video_link}` target="_blank") 
+            != globals.icon('play')
+      if project.weblink 
+        .project__action.project__action--link
+          a(href=`${project.weblink}` target="_blank") 
+            != globals.icon('link-url')
+      if project.github 
+        .project__action.project__action--link
+          a(href=`${project.github}` target="_blank")
+            != globals.icon('github')
+      if project.blog 
+        .project__action.project__action--link
+          a(href=`${project.blog}` target="_blank")
+            != globals.icon('blog')
+
+

@@ -1,0 +1,50 @@
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  // justify-content: center;
+
+  .tag {
+    display: block;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+
+    @media (max-width: 930px) {
+      // margin-right: initial;
+    }
+
+    &__text {
+      padding: 0.5rem;
+      display: block;
+      background: var(--color-accent-light);
+      color: var(--white);
+      font-size: 12px;
+      text-align: center;
+      width: 80px;
+      height: 60px;
+
+      cursor: pointer;
+
+      clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 75%,
+        75% 75%,
+        75% 100%,
+        50% 75%,
+        0% 75%
+      );
+      &:hover {
+        background-color: var(--color-accent-bg);
+        color: var(--black);
+        tag-style: italic;
+      }
+
+      @media (max-width: 930px) {
+        width: auto;
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+doctype html
+html
+  head
+    title= `${globals.title || 'Home'} | ${globals.siteName}`
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    link(rel="icon" href="/icons/icon.ico" type="image/x-icon")
+    link(rel="shortcut icon" href="/icons/icon.ico" type="image/x-icon")
+
+    meta(property="og:title" content="MapTheClouds")
+    meta(property="og:type" content="project")
+    meta(property="og:url" content="https://maptheclouds.com")
+    meta(property="og:description" content="Webdev and cartographer, on a journey to 3Dmaps and dataviz.  Grab a coffee and a laptop, we're going to map the clouds! 🌩️🏞️🌩️")
+   
+    meta(property="project:publisher" content="https://maptheclouds.com")
+    meta(property="project:section" content="Graphic")
+    meta(property="project:tag" content="Graphic")
+    meta(property="og:image" content="https://maptheclouds.com/img/og_1200_630.png")
+   
+    meta(property="og:image:type" content="image/png")
+    meta(property="og:image:width" content="1200")
+    meta(property="og:image:height" content="630")
+    meta(property="twitter:card" content="summary_large_image")
+    meta(property="twitter:image" content="https://maptheclouds.com/img/og_1200_630.png")
+   
+    meta(property="twitter:site" content="@maptheclouds")
+
+  body
+    .bubble(id="bubble")
+    .wrapper
+      block header
+        nav.navbar.navbar-expand-lg.fixed-top.navbar-dark(href="/")
+          a.navbar-brand(href="/")
+            != globals.icon('logo_coloured')
+            .site-branding-text
+              p.site-title #{globals.siteName}
+              p.site-description GIS playground, 3D maps and groovy visualizations
+          button.navbar-toggler(type="button" id="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation")
+            span !{globals.icon('toggle-editor')}
+            //- span.navbar-toggler-icon !{globals.icon('toggle-editor')}
+          .collapse.navbar-collapse(id="navbar-collapse")
+            ul.navbar-nav.ml-auto
+              each item in globals.menu
+                li.nav__item
+                  a.nav-link(href=item.slug, class=(''))
+                    //- != globals.icon(item.icon)
+                    span #{item.title}
+      
+      a(href="#top" style="color: white" aria-label="Top of the page") 
+        button(id="top-btn")
+          span ˄
+      
+      .cover 
+        .cover-text 
+          h1 #{globals.hero.title} 
+          p.lead #{globals.hero.lead} 
+          .panel 
+            a.btn.btn-lg(href=`${globals.hero.link}` role="button") #{globals.hero.buttonText} 
+
+      section.centered
+        a(id="top" name="top" aria-label="Top page anchor")
+        
+        if globals.myTitle
+          h1 
+            span.title !{globals.myTitle}
+        .content
+          block content
+        //- .push 
+
+      block footer
+        footer.site-footer 
+          aside.widget-area.footer-widgets(id="footer-widgets" aria-label="Footer widgets")
+            section.widget.widget_copy
+              ul 
+                li
+                  span © #{new Date().getFullYear()} 
+                  a(href="/")
+                    span #{globals.siteName}
+            section.widget.wpcw-widgets.wpcw-widget-social
+              ul 
+                li.no-label 
+                  a(href="https://www.facebook.com/maptheclouds3d" target="_blank" title="Visit Map The Clouds on Facebook")
+                    span.fa.fa-2x.fa-facebook
+                li.no-label 
+                  a(href="https://www.instagram.com/maptheclouds" target="_blank" title="Visit Map The Clouds on Instagram")
+                    span.fa.fa-2x.fa-instagram
+                li.no-label 
+                  a(href="https://github.com/maptheclouds" target="_blank" title="Visit Map The Clouds on GitHub")
+                    span.fa.fa-2x.fa-github
+                li.no-label 
+                  a(href="https://www.pinterest.com/maptheclouds" target="_blank" title="Visit Map The Clouds on Pinterest")
+                    span.fa.fa-2x.fa-pinterest
+                li.no-label 
+                  a(href="https://www.linkedin.com/in/map-theclouds-940911178/" target="_blank" title="Visit Map The Clouds on LinkedIn")
+                    span.fa.fa-2x.fa-linkedin
+                li.no-label 
+                  a(href="https://twitter.com/maptheclouds" target="_blank" title="Visit Map The Clouds on Twitter")
+                    span.fa.fa-2x.fa-twitter
+
+  
+    link(href= "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", rel='stylesheet')
+
+

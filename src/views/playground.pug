@@ -1,0 +1,19 @@
+extends layout
+
+include mixins/_projectCard
+
+block content
+  .inner
+    h1 Playground
+    
+    //- .items
+      //- each menu_item in globals.nestedArticles
+      //-   //- h2= menu_item.key
+      //-   .projects(id= `#${menu_item.key.toLowerCase()}`)
+    .projects
+      each item in globals.projects
+        if (item.parent_project.match(/30-day-chart-challenge/g) === null)
+          +projectCard(item)
+
+
+    

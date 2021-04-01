@@ -1,0 +1,163 @@
+$lightgreen: #bdfde2;
+$calmblue: #83c3fe;
+$darkblue: #0f2b46;
+$sparkgreen: #34fcfc;
+$black: #494949;
+$shad: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+
+$color_accent: #008290;
+$color-accent: #79d4e4;
+
+:root {
+  /* main colors */
+  /* primary colors */
+  --color-primary-darker: #f47700;
+  --color-primary-dark: #ff7d01;
+  --color-primary: #ff952f;
+  --color-primary-light: #ffa957;
+  --color-primary-lighter: #ffc186;
+  --color-primary-bg: #ffdab8;
+  /* secondary colors */
+  --color-secondary-darker: #0d30a5;
+  --color-secondary-dark: #1944d2;
+  --color-secondary: #3d62db;
+  --color-secondary-light: #5f7ee3;
+  --color-secondary-lighter: #89a0ec;
+  --color-secondary-bg: #b4c3f3;
+  /* tertiary colors */
+  --color-tertiary-darker: #9a6b00;
+  --color-tertiary-dark: #c48800;
+  --color-tertiary: #fcaf01;
+  --color-tertiary-light: #ffc339;
+  --color-tertiary-lighter: #ffd063;
+  --color-tertiary-bg: #ffdf94;
+
+  /* accent colors */
+  --color-accent-darker: #024d5f;
+  --color-accent-dark: #036379;
+  --color-accent: #057f9c;
+  --color-accent-light: #288ca3;
+  --color-accent-lighter: #4aa1b5;
+  --color-accent-bg: #92c7d3;
+
+  --color-main-grad: linear-gradient(
+      45deg,
+      var(--color-primary-dark) 0%,
+      hsla(190, 95%, 43%, 0) 70%
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-primary-darker) 10%,
+      hsla(219, 93%, 48%, 0) 80%
+    ),
+    linear-gradient(
+      225deg,
+      var(--color-secondary-darker) 10%,
+      hsla(293, 93%, 48%, 0) 80%
+    ),
+    linear-gradient(
+      315deg,
+      var(--color-secondary-dark) 100%,
+      hsla(130, 96%, 45%, 0) 70%
+    );
+
+  --color-main-grad-bg: linear-gradient(
+      45deg,
+      var(--color-primary-bg) 0%,
+      hsla(190, 95%, 43%, 0) 70%
+    ),
+    linear-gradient(
+      135deg,
+      var(--color-primary-light) 10%,
+      hsla(219, 93%, 48%, 0) 80%
+    ),
+    linear-gradient(
+      225deg,
+      var(--color-secondary-light) 10%,
+      hsla(293, 93%, 48%, 0) 80%
+    ),
+    linear-gradient(
+      315deg,
+      var(--color-secondary-bg) 100%,
+      hsla(130, 96%, 45%, 0) 70%
+    );
+
+  /* shades */
+  --black: #1d1d21;
+  --gray-10: #2e2e31;
+  --gray-6: #7b7a7d;
+  --gray-4: #a5a5a6;
+  --gray-3: #bbbbbc;
+  --gray-2: #d1d0d2;
+  --gray-1: #e8e7e8;
+  --white: white;
+  --shad: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05);
+
+  /* main background color */
+  --color-main-background: var(--white);
+  // --color-main-background: var(--black);
+  // --color-main-background: var(--color-primary-bg);
+  // --color-main-background: var(--color-secondary-darker);
+  /* border */
+  --color-border: var(--gray-2);
+
+  /* feedback */
+  --color-success: #a0c089;
+  --color-error: #f5414f;
+  --color-warning: #ffcc3f;
+
+  /* gradient */
+
+  /* typography */
+  --color-text: var(--gray-10);
+  // --color-text-heading: var(--black);
+  --color-text-heading: var(--white);
+  --color-text-subtle: var(--gray-6);
+  --color-link: var(--color-primary);
+  --color-link-visited: var(--color-primary-dark);
+  --color-mark: var(--color-accent-bg);
+  --color-blockquote-border: var(--white);
+  --color-cover-text: var(--white);
+  --color-intro-text: #7a4f2c;
+  --color-content-text: #7a4f2c;
+  --color-footer-text: var(--white);
+  --typography-fonts-text: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+  --typography-size-html: 18px;
+
+  /* forms */
+  --form-element-border: var(--color-border);
+  --form-element-border-focus: var(--color-primary);
+  --form-element-border-error: var(--color-error);
+  --form-element-bg: var(--white);
+  --form-text-placeholder: var(--gray-4);
+
+  /* buttons */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-hover: var(--color-primary-lighter);
+  --btn-primary-active: var(--color-primary-dark);
+  --btn-primary-label: var(--white);
+
+  /* icons */
+  --color-icon-primary: var(--gray-4);
+  --color-icon-secondary: inherit;
+
+  --color_intro_overlay_background: var(--black);
+  --color_intro_overlay_opacity: 0.6;
+  --color_intro_headings: var(--black);
+
+  --color_footer_background: var(--black);
+
+  --cover_image: url("http://blog.maptheclouds.com/wp-content/themes/reykjavik/assets/images/header/pixabay-colorado-1436681.png");
+  --cover_image_position: 50% 50%;
+  --cover_image_size: cover;
+  --cover_image_repeat: repeat;
+  --cover_image_attachment: scroll;
+  --cover_image_opacity: 0.15;
+
+  --footer_image: url("http://blog.maptheclouds.com/wp-content/themes/reykjavik/assets/images/header/pixabay-colorado-1436681.png");
+  --footer_image_position: 50% 50%;
+  --footer_image_size: cover;
+  --footer_image_repeat: repeat;
+  --footer_image_attachment: scroll;
+  --footer_image_opacity: 0.15;
+}

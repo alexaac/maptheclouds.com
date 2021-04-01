@@ -1,0 +1,54 @@
+.chart {
+  height: 100%;
+
+  padding: 0;
+
+  max-width: 900px;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  // @media (max-width: 930px) {
+  //   max-width: 900px;
+  // }
+}
+
+svg.chart-group {
+  display: block;
+  margin: 0;
+  font: 12px sans-serif;
+
+  border: 1px solid #969696;
+}
+
+svg.chart-group a {
+  color: #0078a8;
+}
+
+.pack-group {
+  // opacity: 0.5;
+}
+
+circle {
+  stroke: "#555";
+}
+
+.land {
+  stroke: "#555";
+  // fill: #e8e8e8;
+  /* stroke: #fff; */
+  /* stroke-width: 2; */
+}
+
+.land:hover {
+  // fill: #d1cfcf;
+}
+
+.map-icon {
+  background-image: url(../icons/map.svg);
+}
+
+.pack-icon {
+  background-image: url(../icons/pack.svg);
+}

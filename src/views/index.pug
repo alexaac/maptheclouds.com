@@ -1,0 +1,23 @@
+extends layout
+
+include mixins/_projectCard
+
+block content
+  .inner
+    h1 Playground
+    
+    //- .items
+      //- each menu_item in globals.nestedArticles
+      //-   //- h2= menu_item.key
+      //-   .projects(id= `#${menu_item.key.toLowerCase()}`)
+    .projects
+      each item in globals.projects.filter(item => item.parent_project.match(/30-day-chart-challenge/g) === null).slice(0,6)
+        +projectCard(item)
+    .front-section
+      a(href="./playground") [See More Projects]
+    .front-section
+      a(href="https://twitter.com/maptheclouds") [Latest Tweets]
+    .front-section
+      a(href="https://blog.maptheclouds.com") [Latest Blog Posts]
+
+    
