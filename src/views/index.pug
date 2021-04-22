@@ -11,7 +11,7 @@ block content
       //-   //- h2= menu_item.key
       //-   .projects(id= `#${menu_item.key.toLowerCase()}`)
     .projects
-      each item in globals.projects.filter(item => item.parent_project.match(/30-day-chart-challenge/g) === null).slice(0,6)
+      each item in globals.projects.slice(0,6)
         +projectCard(item)
     .front-section
       a(href="./playground") [See More Projects]
