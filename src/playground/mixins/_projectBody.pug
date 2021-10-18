@@ -2,7 +2,7 @@ mixin projectBody(project= {})
   //- pre= dump(project)
   .detailed
     .detailed__hero
-      img.detailed__image(src=`/img/${project.photo || 'project.png'}`)
+      img.detailed__image(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}`)
       h2.title.title--detailed
         a(href=`/projects/${project.slug}`) #{project.name}
 

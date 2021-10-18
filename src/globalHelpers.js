@@ -1,9 +1,9 @@
-const fs = require("fs");
-const mongoose = require("mongoose");
-require("./models/Project");
+const fs = require('fs');
+const mongoose = require('mongoose');
+require('./models/Project');
 
-const { nest } = require("d3-collection");
-const { data } = require("./data");
+const { nest } = require('d3-collection');
+const { data } = require('./data');
 
 // Create a d3 Object with a subset of functions
 const d3 = Object.assign(
@@ -17,11 +17,11 @@ const getNestedCategories = (projects) => {
   let nestedData = d3
     .nest()
     .key((d) => {
-      return d.parent_project || "ungrouped";
+      return d.parent_project || 'ungrouped';
     })
     .entries(projects);
 
-  return nestedData.sort((a, b) => ("" + a.created).localeCompare(b.created));
+  return nestedData.sort((a, b) => ('' + a.created).localeCompare(b.created));
 };
 
 const arrayToObject = (array) =>
@@ -37,7 +37,7 @@ const getProjectsBySlug = (projects) => {
       return a;
     }, {});
 
-  let individualData = convert(projects, "slug");
+  let individualData = convert(projects, 'slug');
 
   return individualData;
 };
@@ -49,7 +49,7 @@ const helpers = {
     icon: (name) => fs.readFileSync(`src/icons/${name}.svg`),
     menu: data.menu,
     myTitle: data.title,
-    myLogoTitle: data["logo-title"],
+    myLogoTitle: data['logo-title'],
     fontsList: data.fontsList,
     radioList1: data.radioList1,
     radioList2: data.radioList2,
@@ -66,15 +66,15 @@ mongoose.connect(
   }
 );
 
-const Project = mongoose.model("project");
+const Project = mongoose.model('project');
 
 const getProjects = async function (query) {
   return Project.find()
-    .sort({ created: "desc" })
+    .sort({ created: 'desc' })
     .exec()
     .then((returnedProjects) => {
       let visibleProjects = returnedProjects.filter(
-        (item) => item.hide === "false"
+        (item) => item.hide === 'false'
       );
 
       helpers.globals.nestedArticles = arrayToObject(

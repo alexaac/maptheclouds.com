@@ -4,16 +4,16 @@ mixin projectCard(project= {})
       .project__actions
       if project.weblink
         a(href=`${project.weblink}` target="_blank")
-          img(src=`/img/${project.photo || 'project.png'}` title=`${project.name}`)
+          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.name}`)
       else if (project.slug === "30-day-chart-challenge")
         a(href=`/playground/${project.slug}/`)
-          img(src=`/img/${project.photo || 'project.png'}` title=`${project.name}`)
+          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.name}`)
       //- else if (project.parent_project.match(/30-day-chart-challenge/g) !== null)
       //-   a(href=`/playground/${project.parent_project}/${project.slug}`)
-      //-     img(src=`/img/${project.photo || 'project.png'}` title=`${project.name}`)
+      //-     img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.name}`)
       else 
         a(href="#")
-          img(src=`/img/${project.photo || 'project.png'}` title=`${project.name}`)
+          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.name}`)
     .project__details
       if project.video_link 
         .project__action.project__action--link

@@ -1,112 +1,93 @@
-const webpack = require("webpack");
-const path = require("path");
-const dotenv = require("dotenv").config({
-  path: path.join(__dirname, ".env"),
+const webpack = require('webpack');
+const path = require('path');
+const dotenv = require('dotenv').config({
+  path: path.join(__dirname, '.env'),
 });
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpackMerge = require("webpack-merge");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { merge } = require('webpack-merge');
 const modeConfig = (env) => require(`./build-utils/webpack.${env}`)(env);
-const presetConfig = require("./build-utils/loadPresets");
+const presetConfig = require('./build-utils/loadPresets');
 
 const config = async (
-  { mode, presets } = { mode: "production", presets: [] }
+  { mode, presets } = { mode: 'production', presets: [] }
 ) => {
-  const { getHelpers } = require("./src/globalHelpers");
+  const { getHelpers } = require('./src/globalHelpers');
 
   const helpers = await getHelpers();
 
   // Plugin to process HTML
   const htmlPlugin = new HtmlWebpackPlugin({
-    filename: "index.html",
-    template: path.join(__dirname, "./src/views/index.pug"),
+    filename: 'index.html',
+    template: path.join(__dirname, './src/views/index.pug'),
     templateParameters: helpers,
   });
 
   const htmlPlugin_about = new HtmlWebpackPlugin({
-    filename: "about.html",
-    template: path.join(__dirname, "./src/views/about.pug"),
+    filename: 'about.html',
+    template: path.join(__dirname, './src/views/about.pug'),
     templateParameters: helpers,
   });
 
   const htmlPlugin_playground = new HtmlWebpackPlugin({
-    filename: "playground/index.html",
-    template: path.join(__dirname, "./src/views/playground.pug"),
+    filename: 'playground/index.html',
+    template: path.join(__dirname, './src/views/playground.pug'),
     templateParameters: helpers,
   });
 
   const htmlPlugin_30daychart = new HtmlWebpackPlugin({
-    filename: "playground/30-day-chart-challenge/index.html",
+    filename: 'playground/30-day-chart-challenge/index.html',
     template: path.join(
       __dirname,
-      "./src/playground/30-day-chart-challenge.pug"
+      './src/playground/30-day-chart-challenge.pug'
     ),
     templateParameters: helpers,
   });
 
-  return webpackMerge(
+  return merge(
     {
       mode,
-      node: {
-        fs: "empty",
+
+      resolve: {
+        fallback: {
+          path: false,
+        },
       },
-      context: path.join(__dirname, "./src"),
+
+      context: path.join(__dirname, './src'),
+
       entry: {
         // main JS file
-        app: "./index.js",
+        app: './index.js',
       },
-      target: "node", // support native modules
-      output: {
-        path: path.resolve(__dirname, "./dist"),
-        filename: "[name].js",
-      },
-      devServer: {
-        contentBase: path.resolve(__dirname, "./src"),
-      },
-      // use sourcemaps, 'source-map' specifically
-      devtool: "source-map",
+
+      target: 'node', // support native modules
+
       // different loaders are responsible for different file types
       module: {
         rules: [
           {
-            test: /\.(png|jpg|gif|eot|ttf|woff|woff2)$/,
-            use: {
-              loader: "url-loader",
-              options: { limit: 10000 },
-            },
-          },
-          {
-            test: /\.svg$/,
-            use: [
-              {
-                loader: "svg-url-loader",
-                options: { limit: 10000 },
-              },
-            ],
+            test: /\.(png|jpg|gif|eot|ttf|woff|woff2|svg)$/,
+            type: 'asset/resource',
           },
           {
             test: /\.pug$/,
-            loader: "pug-loader",
+            loader: 'pug-loader',
           },
           {
             test: /\.(js)$/,
             exclude: /(node_modules)/,
-            use: [
-              {
-                loader: "babel-loader",
-                options: {
-                  presets: [],
-                },
-              },
-            ],
+            loader: 'babel-loader',
           },
           {
             test: /\.(json|geojson)$/i,
             exclude: /(node_modules)/,
-            use: [{ loader: "json-loader" }],
+            loader: 'json-loader',
           },
         ],
       },
-      target: "web", // important! index.js does not work without it
+
+      target: 'web', // important! index.js does not work without it
+
       plugins: [
         htmlPlugin,
         htmlPlugin_about,
@@ -114,15 +95,18 @@ const config = async (
         htmlPlugin_30daychart,
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({
-          "process.env": dotenv.parsed,
+          'process.env': dotenv.parsed,
         }),
       ],
+
       resolve: {
-        extensions: [".js", "*"],
-        modules: [path.join(__dirname, "node_modules")],
+        extensions: ['.js', '*'],
+        modules: [path.join(__dirname, 'node_modules')],
       },
     },
+
     modeConfig(mode),
+
     presetConfig({ mode, presets })
   );
 };
