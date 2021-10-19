@@ -6,7 +6,7 @@ module.exports = () => ({
   mode: 'development',
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     assetModuleFilename: 'icons/[name][ext]',
   },
 

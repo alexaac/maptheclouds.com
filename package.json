@@ -8,8 +8,7 @@
   "main": "index.js",
   "scripts": {
     "prod": "webpack --env=mode=production",
-    "dev": "webpack serve --env=mode=development",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false webpack --env=mode=production"
+    "dev": "webpack serve --env=mode=development"
   },
   "repository": {
     "type": "git",
@@ -28,6 +27,7 @@
     "clean-webpack-plugin": "^4.0.0",
     "compression-webpack-plugin": "^3.0.0",
     "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.1.1",
     "d3": "^4.13.0",
     "dotenv-webpack": "^7.0.2",
     "html-webpack-plugin": "^5.3.2",
@@ -44,13 +44,14 @@
     "spin": "0.0.1",
     "style-loader": "^3.2.1",
     "svg-url-loader": "^7.1.1",
-    "uglifyjs-webpack-plugin": "^2.2.0",
+    "terser-webpack-plugin": "^5.2.4",
     "url-loader": "^4.1.1",
     "webpack": "^5.58.2",
     "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^4.9.0",
     "webpack-dev-server": "^4.3.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "workbox-webpack-plugin": "^6.3.0"
   },
   "dependencies": {
     "dompurify": "^2.2.7",

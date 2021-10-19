@@ -12,4 +12,5 @@ block content
       //- h2 Comparisons
       each chart in visible30DayCharts
         h3 #{chart.name}
+        pre=dump(chart)
         +projectCard(chart)

@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="en")
   head
     title= `${globals.title || 'Home'} | ${globals.siteName}`
     meta(charset="UTF-8")
@@ -30,7 +30,7 @@ html
     .bubble(id="bubble")
     .wrapper
       block header
-        nav.navbar.navbar-expand-lg.fixed-top.navbar-dark(href="/")
+        nav.navbar.navbar-expand-lg.fixed-top.navbar-dark(href="/" role="navigation")
           a.navbar-brand(href="/")
             != globals.icon('logo_coloured')
             .site-branding-text
@@ -47,30 +47,30 @@ html
                     //- != globals.icon(item.icon)
                     span #{item.title}
       
-      a(href="#top" style="color: white" aria-label="Top of the page") 
-        button(id="top-btn")
-          span ˄
-      
-      .cover 
+      .cover(role="banner") 
         .cover-text 
           h1 #{globals.hero.title} 
           p.lead #{globals.hero.lead} 
           .panel 
             a.btn.btn-lg(href=`${globals.hero.link}` role="button") #{globals.hero.buttonText} 
 
-      section.centered
-        a(id="top" name="top" aria-label="Top page anchor")
-        
-        if globals.myTitle
-          h1 
-            span.title !{globals.myTitle}
-        .content
-          block content
-        //- .push 
+      main(role="main")
+        a(href="#top" style="color: white" title="Top of the page") 
+            button(id="top-btn")
+              span ˄
+        section.centered
+          a(id="top" name="top" title="Top page anchor")
+          
+          if globals.myTitle
+            h1 
+              span.title !{globals.myTitle}
+          .content
+            block content
+          //- .push 
 
       block footer
-        footer.site-footer 
-          aside.widget-area.footer-widgets(id="footer-widgets" aria-label="Footer widgets")
+        footer.site-footer(role="contentinfo")
+          widget-area.footer-widgets(id="footer-widgets")
             section.widget.widget_copy
               ul 
                 li
@@ -100,5 +100,11 @@ html
 
   
     link(href= "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", rel='stylesheet')
-
+    script.
+      if ('serviceWorker' in navigator) { // Check that service workers are supported
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
 

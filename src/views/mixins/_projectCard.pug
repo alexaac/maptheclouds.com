@@ -3,30 +3,30 @@ mixin projectCard(project= {})
     .project__hero
       .project__actions
       if project.weblink
-        a(href=`${project.weblink}` target="_blank")
+        a(href=`${project.weblink}` target="_blank" title=`${project.slug} link`)
           img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.name}`)
       else if (project.slug === "30-day-chart-challenge")
-        a(href=`/playground/${project.slug}/`)
+        a(href=`/playground/${project.slug}/` title=`${project.slug} link`)
           img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.name}`)
       else 
-        a(href="#")
+        a(href="#" title=`${project.slug} link`)
           img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.name}`)
     .project__details
       if project.video_link 
         .project__action.project__action--link
-          a(href=`${project.video_link}` target="_blank") 
+          a(href=`${project.video_link}` target="_blank" title=`${project.slug} action`) 
             != globals.icon('play')
       if project.weblink 
         .project__action.project__action--link
-          a(href=`${project.weblink}` target="_blank") 
+          a(href=`${project.weblink}` target="_blank" title=`${project.slug} weblink`) 
             != globals.icon('link-url')
       if project.github 
         .project__action.project__action--link
-          a(href=`${project.github}` target="_blank")
+          a(href=`${project.github}` target="_blank" title=`${project.slug} github`)
             != globals.icon('github')
       if project.blog 
         .project__action.project__action--link
-          a(href=`${project.blog}` target="_blank")
+          a(href=`${project.blog}` target="_blank" title=`${project.slug} blog`)
             != globals.icon('blog')
 
 

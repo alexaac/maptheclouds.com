@@ -121,7 +121,7 @@ $color-accent: #79d4e4;
   --color-intro-text: #7a4f2c;
   --color-content-text: #7a4f2c;
   --color-footer-text: var(--white);
-  --typography-fonts-text: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+  --typography-fonts-text: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
   --typography-size-html: 18px;
 
   /* forms */
@@ -147,14 +147,14 @@ $color-accent: #79d4e4;
 
   --color_footer_background: var(--black);
 
-  --cover_image: url("http://blog.maptheclouds.com/wp-content/themes/reykjavik/assets/images/header/pixabay-colorado-1436681.png");
+  --cover_image: url('https://blog.maptheclouds.com/wp-content/themes/reykjavik/assets/images/header/pixabay-colorado-1436681.png');
   --cover_image_position: 50% 50%;
   --cover_image_size: cover;
   --cover_image_repeat: repeat;
   --cover_image_attachment: scroll;
   --cover_image_opacity: 0.15;
 
-  --footer_image: url("http://blog.maptheclouds.com/wp-content/themes/reykjavik/assets/images/header/pixabay-colorado-1436681.png");
+  --footer_image: url('https://blog.maptheclouds.com/wp-content/themes/reykjavik/assets/images/header/pixabay-colorado-1436681.png');
   --footer_image_position: 50% 50%;
   --footer_image_size: cover;
   --footer_image_repeat: repeat;
