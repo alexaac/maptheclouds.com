@@ -1,8 +1,8 @@
 exports.data = {
   hero: {
-    title: 'FOSS4G Buenos Aires (September 27​th​ to October 2​nd​ 2021)',
-    lead: 'Free and Open Source Software for Geospatial week has started! This year our host is Buenos Aires, Argentina. 🌎',
-    link: 'https://twitter.com/search?q=%23foss4g2021',
+    title: '#30DayMapChallenge',
+    lead: '🎉 Categories for #30DayMapChallenge 2021 (november) 🎉 🌎',
+    link: 'https://twitter.com/tjukanov/status/1443868144905428992?s=20',
     buttonText: 'See on Twitter!',
   },
   menu: [
