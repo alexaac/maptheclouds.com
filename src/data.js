@@ -36,7 +36,7 @@ exports.data = {
       location: { type: 'Point', address: 'earth ', coordinates: [Array] },
       tags: ['Data Visualization', 'Dataviz'],
       type: 'work',
-      name: '30 Day Chart Challenge 2021ssss',
+      name: '30 Day Chart Challenge 2021',
       video_link: '',
       weblink: '',
       github: 'https://github.com/alexaac/30-day-chart-challenge',
