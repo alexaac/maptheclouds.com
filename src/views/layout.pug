@@ -33,10 +33,7 @@ html(lang="en")
       block header
         nav.navbar.navbar-expand-lg.fixed-top.navbar-dark(href="/" role="navigation")
           a.navbar-brand(href="/")
-            != globals.icon('logo_coloured')
-            .site-branding-text
-              p.site-title #{globals.siteName}
-              p.site-description GIS playground, 3D maps and groovy visualizations
+           .site-branding-logo
           button.navbar-toggler(type="button" id="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation")
             span !{globals.icon('toggle-editor')}
             //- span.navbar-toggler-icon !{globals.icon('toggle-editor')}

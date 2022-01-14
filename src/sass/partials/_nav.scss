@@ -21,8 +21,6 @@
 
   .navbar-brand {
     display: inline-block;
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
     margin-right: 1rem;
     font-size: 1.25rem;
     line-height: inherit;
@@ -33,12 +31,26 @@
       text-decoration: none;
     }
 
-    svg {
-      margin: 0 0.5rem;
-      width: 50px;
-      height: 50px;
+    .site-branding-logo {
+      margin-left: 0.2rem;
+      height: 100px;
       overflow: hidden;
-      vertical-align: middle;
+      width: 450px;
+      background-image: url(../icons/Logo_all_white_on_black.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @media only screen and (max-width: 568px) {
+        margin-left: 0.2rem;
+        height: 70px;
+        overflow: hidden;
+        width: 190px;
+        background-image: url(../icons/Logo_white_on_black.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
     }
 
     .site-branding-text {
