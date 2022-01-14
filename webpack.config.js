@@ -34,6 +34,18 @@ const config = async (
     templateParameters: helpers,
   });
 
+  const htmlPlugin_terms = new HtmlWebpackPlugin({
+    filename: 'terms.html',
+    template: path.join(__dirname, './src/views/terms.html'),
+    templateParameters: helpers,
+  });
+
+  const htmlPlugin_privacy = new HtmlWebpackPlugin({
+    filename: 'privacy.html',
+    template: path.join(__dirname, './src/views/privacy.html'),
+    templateParameters: helpers,
+  });
+
   const htmlPlugin_30daychart = new HtmlWebpackPlugin({
     filename: 'playground/30-day-chart-challenge/index.html',
     template: path.join(
@@ -92,6 +104,8 @@ const config = async (
         htmlPlugin,
         htmlPlugin_about,
         htmlPlugin_playground,
+        htmlPlugin_terms,
+        htmlPlugin_privacy,
         htmlPlugin_30daychart,
         new webpack.ProgressPlugin(),
         new webpack.DefinePlugin({

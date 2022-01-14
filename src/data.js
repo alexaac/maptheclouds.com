@@ -5,6 +5,20 @@ exports.data = {
     link: 'https://twitter.com/maptheclouds/status/1465391787787313159',
     buttonText: 'See on Twitter!',
   },
+  gdpr: [
+    {
+      name: 'terms',
+      title: 'Terms',
+      slug: '/terms.html',
+      icon: 'terms',
+    },
+    {
+      name: 'privacy',
+      title: 'Privacy',
+      slug: '/privacy.html',
+      icon: 'privacy',
+    },
+  ],
   menu: [
     {
       name: 'home',

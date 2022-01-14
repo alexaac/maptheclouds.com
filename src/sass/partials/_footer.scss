@@ -25,16 +25,38 @@
       color: var(--white);
     }
   }
+
+  .widget_gdpr {
+    ul {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      position: absolute;
+
+      .nav-link {
+        padding-right: 0;
+        padding-left: 0;
+
+        display: block;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+      }
+
+      a {
+        color: white;
+      }
+    }
+  }
 }
 
 .site-footer::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
 }
 .site-footer::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
 }

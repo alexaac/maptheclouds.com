@@ -66,6 +66,11 @@ html(lang="en")
             block content
           //- .push 
 
+      div.consent-popup(id="consent-popup" class="hidden")
+        p By using this site you agree to our #[a(href="./terms.html") Terms and Conditions]. Please #[a(href="#" id="accept") Accept] these before using the site.
+        button.consent-remove(id="consent-remove")
+          span X
+
       block footer
         footer.site-footer(role="contentinfo")
           widget-area.footer-widgets(id="footer-widgets")
@@ -75,6 +80,13 @@ html(lang="en")
                   span © #{new Date().getFullYear()} 
                   a(href="/")
                     span #{globals.siteName}
+            section.widget.widget_gdpr
+              ul
+                each item in globals.gdpr
+                  li.nav__item
+                    a.nav-link(href=item.slug, class=(''))
+                      //- != globals.icon(item.icon)
+                      span #{item.title}
             section.widget.wpcw-widgets.wpcw-widget-social
               ul 
                 li.no-label 

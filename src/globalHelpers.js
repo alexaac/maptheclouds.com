@@ -49,6 +49,7 @@ const helpers = {
     icon: (name) => fs.readFileSync(`src/icons/${name}.svg`),
     logo: (name) => `src/icons/${name}.svg`,
     menu: data.menu,
+    gdpr: data.gdpr,
     myTitle: data.title,
     myLogoTitle: data['logo-title'],
     fontsList: data.fontsList,

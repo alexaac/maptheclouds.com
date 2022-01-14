@@ -1,0 +1,26 @@
+.consent-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 8rem;
+  background-color: #fff;
+  transition: opacity 1s ease;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.consent-remove {
+  color: #303030;
+  background: none;
+  border: 0;
+  &:hover {
+    color: var(--color-accent-lighter);
+  }
+}
