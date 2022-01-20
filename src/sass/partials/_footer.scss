@@ -26,7 +26,9 @@
     }
   }
 
-  .widget_gdpr {
+  .widget-gdpr {
+    display: none;
+
     ul {
       display: flex;
       list-style: none;
@@ -45,6 +47,10 @@
       a {
         color: white;
       }
+    }
+
+    @media (min-width: 992px) {
+      display: initial;
     }
   }
 }

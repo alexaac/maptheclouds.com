@@ -39,6 +39,12 @@ exports.data = {
       icon: 'playground',
     },
     {
+      name: 'services',
+      title: 'Services',
+      slug: '/services.html',
+      icon: 'services',
+    },
+    {
       name: 'blog',
       title: 'Blog',
       slug: 'https://blog.maptheclouds.com/',

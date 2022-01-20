@@ -1,4 +1,5 @@
 // https://github.com/codebubb/cookie-consent-tutorial
+// TODO: check per session, don't show on every page
 
 const consentCheck = () => {
   const consentPopup = document.getElementById('consent-popup');
