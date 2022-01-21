@@ -28,12 +28,6 @@ const config = async (
     templateParameters: helpers,
   });
 
-  const htmlPlugin_services = new HtmlWebpackPlugin({
-    filename: 'services.html',
-    template: path.join(__dirname, './src/views/services.pug'),
-    templateParameters: helpers,
-  });
-
   const htmlPlugin_playground = new HtmlWebpackPlugin({
     filename: 'playground/index.html',
     template: path.join(__dirname, './src/views/playground.pug'),
@@ -109,7 +103,6 @@ const config = async (
       plugins: [
         htmlPlugin,
         htmlPlugin_about,
-        htmlPlugin_services,
         htmlPlugin_playground,
         htmlPlugin_terms,
         htmlPlugin_privacy,
