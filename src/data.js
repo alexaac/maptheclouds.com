@@ -1,8 +1,8 @@
 exports.data = {
   hero: {
-    title: '#30DayMapChallenge',
-    lead: '🎉 2021 (full!) map gallery and a 3D hexagons tutorial 🎉 🌎',
-    link: 'https://twitter.com/maptheclouds/status/1465391787787313159',
+    title: '#30DayChartChallenge',
+    lead: '🎉 #30DayChartChallenge 2022 🎉 🌎',
+    link: 'https://twitter.com/search?q=%2330DayChartChallenge%202022',
     buttonText: 'See on Twitter!',
   },
   gdpr: [
