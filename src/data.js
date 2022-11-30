@@ -1,8 +1,8 @@
 exports.data = {
   hero: {
-    title: '#30DayChartChallenge',
-    lead: '🎉 #30DayChartChallenge 2022 🎉 🌎',
-    link: 'https://twitter.com/search?q=%2330DayChartChallenge%202022',
+    title: '#30DayMapChallenge',
+    lead: '🎉 #30DayMapChallenge 2022 🎉 🌎',
+    link: 'https://twitter.com/search?q=%2330DayMapChallenge%202022',
     buttonText: 'See on Twitter!',
   },
   gdpr: [
