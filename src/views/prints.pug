@@ -1,0 +1,30 @@
+extends layout
+
+block content
+  .intro
+    h1 
+      span.title Prints 🎨 🖨️
+    
+  .inner
+    .about
+
+      p After three years of free (😀) freelancing, I decided to finally monetize my creations. 
+      p You can find some of my printed works on #[a(href="https://www.redbubble.com/people/maptheclouds/shop?asc=u") Redbubble].
+
+      br
+
+  div.prints
+    div(id="rb-xzfcxvzx")
+      script(type='text/javascript',  src="https://www.redbubble.com/assets/external_portfolio.js").
+
+      script(type='text/javascript').
+        console.log('here')
+        if (window.innerWidth < 568 ) {
+          new RBExternalPortfolio('www.redbubble.com', 'maptheclouds', 6, 2).renderIframe() 
+        } else if (window.innerWidth < 768 ) { 
+          new RBExternalPortfolio('www.redbubble.com', 'maptheclouds', 6, 3).renderIframe()
+        } else { 
+          new RBExternalPortfolio('www.redbubble.com', 'maptheclouds', 6, 5).renderIframe()
+        }
+
+            

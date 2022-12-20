@@ -1,9 +1,9 @@
 exports.data = {
   hero: {
-    title: '#30DayMapChallenge',
-    lead: '🎉 #30DayMapChallenge 2022 🎉 🌎',
-    link: 'https://twitter.com/search?q=%2330DayMapChallenge%202022',
-    buttonText: 'See on Twitter!',
+    title: 'New! Prints',
+    lead: '🖨️ You can find some of my printed works on Redbubble! 🎨',
+    link: 'https://www.redbubble.com/people/maptheclouds/shop?asc=u',
+    buttonText: 'Explore',
   },
   gdpr: [
     {
@@ -43,6 +43,12 @@ exports.data = {
       title: 'Blog',
       slug: 'https://blog.maptheclouds.com/',
       icon: 'blog',
+    },
+    {
+      name: 'prints',
+      title: 'Prints',
+      slug: '/prints.html',
+      icon: 'prints',
     },
   ],
   projectsBackup: [
