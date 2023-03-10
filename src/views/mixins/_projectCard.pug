@@ -19,17 +19,19 @@ mixin projectCard(project= {})
         .project__action.project__action--link
           a(href=`${project.video_link}` target="_blank" title=`${project.slug} action`) 
             != globals.icon('play')
-      if project.weblink 
-        .project__action.project__action--link
-          a(href=`${project.weblink}` target="_blank" title=`${project.slug} weblink`) 
-            != globals.icon('link-url')
-      //- if project.github 
-      //-   .project__action.project__action--link
-      //-     a(href=`${project.github}` target="_blank" title=`${project.slug} github`)
-      //-       != globals.icon('github')
-      if project.blog 
-        .project__action.project__action--link
-          a(href=`${project.blog}` target="_blank" title=`${project.slug} blog`)
-            != globals.icon('blog')
+      if project.weblink && project.weblink === project.video_link
+      else 
+        if project.weblink 
+          .project__action.project__action--link
+            a(href=`${project.weblink}` target="_blank" title=`${project.slug} weblink`) 
+              != globals.icon('link-url')
+        //- if project.github 
+        //-   .project__action.project__action--link
+        //-     a(href=`${project.github}` target="_blank" title=`${project.slug} github`)
+        //-       != globals.icon('github')
+        if project.blog 
+          .project__action.project__action--link
+            a(href=`${project.blog}` target="_blank" title=`${project.slug} blog`)
+              != globals.icon('blog')
 
 

@@ -1,8 +1,8 @@
 exports.data = {
   hero: {
-    title: 'New! Prints',
-    lead: '🖨️ You can find some of my printed works on Redbubble! 🎨',
-    link: 'https://www.redbubble.com/people/maptheclouds/shop?asc=u',
+    title: 'New! Prints in România',
+    lead: '🖨️ You can find some of my printed works on Nanana! 🎨',
+    link: 'https://nanana.ro/artist/maptheclouds/tricou-maneca-scurta-unisex-rocker',
     buttonText: 'Explore',
   },
   gdpr: [
