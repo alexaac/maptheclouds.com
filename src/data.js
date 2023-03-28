@@ -1,9 +1,9 @@
 exports.data = {
   hero: {
-    title: 'New! Prints in România',
-    lead: '🖨️ You can find some of my printed works on Nanana! 🎨',
-    link: 'https://nanana.ro/artist/maptheclouds/tricou-maneca-scurta-unisex-rocker',
-    buttonText: 'Explore',
+    title: '#30DayChartChallenge 2023',
+    lead: "This year's challenge is near!",
+    link: 'https://twitter.com/search?q=%252330DayChartChallenge',
+    buttonText: 'Watch on Twitter',
   },
   gdpr: [
     {
