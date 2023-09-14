@@ -3,6 +3,10 @@
   display: flex;
   flex-wrap: wrap;
   margin: -1.25em 0 0 -1.25em;
+
+  @media all and (max-width: 550px) {
+    margin: 0;
+  }
 }
 
 .project {
@@ -111,6 +115,16 @@
   }
 
   img {
+    height: 110%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    object-fit: cover;
+  }
+
+  video {
     height: 110%;
     width: 100%;
     top: 0;

@@ -1,19 +1,19 @@
 mixin projectCard(project= {})
-  .project
+  .project(id=`${project.id}`)
     .project__hero
       .project__actions
       if project.weblink
         a(href=`${project.weblink}` target="_blank" title=`${project.slug} link`)
-          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}`)
+          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}` alt=`${project.more_details}`)
       else if (project.slug === "30-day-chart-challenge")
         a(href=`/playground/${project.slug}/` title=`${project.slug} link`)
-          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}`)
+          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}` alt=`${project.more_details}`)
       else if project.blog
         a(href=`${project.blog}` target="_blank" title=`${project.slug} link`)
-          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}`)
+          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}` alt=`${project.more_details}`)
       else 
         a(href=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.slug} link`)
-          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}`)
+          img(src=`https://mps-ph.s3.us-east-2.amazonaws.com/ma/img/${project.photo || 'project.png'}` title=`${project.description}` alt=`${project.more_details}`)
     .project__details
       if project.video_link 
         .project__action.project__action--link
@@ -35,3 +35,4 @@ mixin projectCard(project= {})
               != globals.icon('blog')
 
 
+          

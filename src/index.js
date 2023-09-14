@@ -64,3 +64,10 @@ function pproject() {
 
   d3.event.preventDefault();
 }
+
+const video = document.createElement('video');
+video.autoplay = true;
+// video.muted = true;
+video.style.display = 'none';
+document.body.appendChild(video);
+

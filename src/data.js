@@ -1,9 +1,9 @@
 exports.data = {
   hero: {
-    title: '#30DayChartChallenge 2023',
-    lead: "This year's challenge is near!",
-    link: 'https://twitter.com/search?q=%252330DayChartChallenge',
-    buttonText: 'Watch on Twitter',
+    title: '2023 #IIBAwards!',
+    lead: `🎉 Three of my 3D maps have been longlisted for the 2023 #IIBAwards! 🥰 World Earthquakes, Chlorophyll 🌍, Star Map 🌌`,
+    link: 'https://www.informationisbeautifulawards.com/showcase?award=2023&type=awards',
+    buttonText: `Here's the full list`,
   },
   gdpr: [
     {
